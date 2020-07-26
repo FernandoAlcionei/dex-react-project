@@ -1,0 +1,25 @@
+@import './components/IconsSvg/styles';
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+h1, h2, h3, h4, h5, h6, span, div, label, input, select, a, button, p {
+  font-family: 'Proxima Nova', -apple-system, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: normal;
+  margin: 0;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: initial;
+}

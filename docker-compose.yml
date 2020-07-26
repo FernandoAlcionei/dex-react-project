@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  dex-react-project:
+    image: nginx:latest
+    container_name: dex-react-project
+    volumes:
+    - ./docker/config/nginx/conf.d:/etc/nginx/conf.d
+    - ./build:/usr/share/nginx/html
+    ports:
+     - 3000:80

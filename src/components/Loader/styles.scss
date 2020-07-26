@@ -1,0 +1,14 @@
+@import '../Theme/styles.scss';
+
+.loader-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+
+    .icon-svg {
+        width: 42px;
+        height: 42px;
+        background-color: $blue;
+    }
+}

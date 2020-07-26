@@ -1,0 +1,31 @@
+@import "../Theme/styles.scss";
+
+@mixin add-icon($icon) {
+    mask-image: url($icon);
+    -webkit-mask-image: url($icon);
+}
+
+.icon-svg {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    mask-position: center center;
+    -webkit-mask-position: center center;
+    mask-image: center center;
+    -webkit-mask-image: center center;
+    background-color: $black;
+  
+    &.loading {
+        @include add-icon("../../images/icons-svg/loading.svg")
+    }
+
+    &.chevron-right {
+        @include add-icon("../../images/icons-svg/chevron-right.svg")
+    }
+
+    &.close {
+        @include add-icon("../../images/icons-svg/close.svg")
+    }
+}

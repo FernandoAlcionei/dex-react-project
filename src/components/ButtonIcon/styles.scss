@@ -1,0 +1,9 @@
+.btn-icon-component {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}

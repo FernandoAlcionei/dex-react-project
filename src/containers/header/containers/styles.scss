@@ -1,0 +1,28 @@
+@import '../../../components/Theme/styles.scss';
+
+.header-view {
+    height: 55px;
+    margin-bottom: 30px;
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 8px 0;
+        background-color: $background-header;
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            width: $page-width;
+            margin: 0 auto;
+
+            .logo {
+                padding-right: 22px;
+                height: 35px;
+            }
+        }
+
+    }
+}

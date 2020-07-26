@@ -1,0 +1,20 @@
+@import '../components/Theme/styles.scss';
+
+.routes {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    background-color: $background-page;
+    padding-bottom: 85px;
+    display: flex;
+    flex-direction: column;
+
+    .wrap-routes {
+        background-color: $white;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        width: $page-width;
+        margin: 0 auto;
+    }
+}

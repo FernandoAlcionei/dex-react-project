@@ -1,0 +1,10 @@
+.comic-list-view {
+    display: flex;
+    flex: 1;
+
+    .wrap-list {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+}

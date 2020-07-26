@@ -1,0 +1,20 @@
+@import '../../../components/Theme/styles.scss';
+
+.not-found-view {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .status {
+        font-size: 32px;
+        color: $grey;
+        padding-bottom: 8px;
+    }
+
+    .message {
+        color: $grey;
+        font-size: 24px;
+    }
+}

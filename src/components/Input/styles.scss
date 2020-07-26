@@ -1,0 +1,19 @@
+@import '../Theme/styles.scss';
+
+.input-component {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+
+    .input-field {
+        border: none;
+        font-size: 18px;
+        flex-grow: 1;
+        padding: 8px 10px;
+        color: $input-color;
+        
+        &::placeholder {
+            color: $input-placeholder;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import '../Theme/styles.scss';
+
+.search-component {
+    flex-grow: 1;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .search-form {
+        display: flex;
+        flex-direction: row;
+
+        .btn-icon-component {
+            padding: 0 10px;
+            background-color: $light-grey;
+        }
+    }
+}
