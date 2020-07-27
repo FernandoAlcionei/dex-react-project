@@ -73,7 +73,7 @@ const Pagination = ({ t, totalResults, totalPages, currentPage, history }) => {
   };
 
   return (
-    <div className="pagination-component">
+    <div data-testid="pagination-component" className="pagination-component">
       <span className="total-results">
         {t('Total results')}: { totalResults }
       </span>

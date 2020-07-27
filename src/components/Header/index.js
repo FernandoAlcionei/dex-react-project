@@ -34,7 +34,7 @@ class HeaderView extends Component {
     const { t } = this.props;
 
     return (
-      <div className="header-component">
+      <div className="header-component" data-testid="header-component">
         <div className="header">
           <div className="content">
             <Link to="/" onClick={() => this.setState({ search: '' })}>
