@@ -7,12 +7,12 @@ const EmptySearch = ({ t }) => (
   <div data-testid="empty-search-component" className="empty-search-component">
     <div>
       <span className="message">
-        {t('Não foi encontrado nenhum resultado que coincida com a sua busca')}
+        {t('No results found matching your search')}
       </span>
 
       <ul className="tips">
         <li>
-          {t('Revise a ortografia da palavra')}
+          {t('Check the spelling of the word')}
         </li>
       </ul>
     </div>

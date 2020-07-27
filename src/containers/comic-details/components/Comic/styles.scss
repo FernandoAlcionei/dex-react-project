@@ -6,12 +6,15 @@
         flex-direction: row;
 
         .wrap-comic-img {
-            width: 680px;
-            height: 680px;
+            max-width: 450px;
+            max-height: 450px;
             border-radius: 4px;
             overflow: hidden;
+            margin-right: 40px;
 
             .comic-img {
+                width: auto;
+                max-height: 450px;
                 display: block;
                 margin: 0 auto;
             }
@@ -33,36 +36,28 @@
             }
             
             .creators {
-                color: $medium-grey;
-                font-size: 18px;
-            }
-            
-            .price {
                 display: flex;
-                align-items: flex-start;
-                font-size: 46px;
-                padding-bottom: 32px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
 
-                .decimals {
-                    font-size: 24px;
-                    padding-top: 6px;
-                    padding-left: 2px;
+                .creator {
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 200px;
+                    flex: 1;
+                    padding-bottom: 15px;
+                    text-transform: capitalize;
                 }
-            }
-
-            .buy-btn {
-                margin-right: 32px;
             }
         }
     }
 
     .wrap-descriptions {
-        width: 680px;
-
         .description-label {
             display: block;
-            font-size: 28px;
-            padding-bottom: 32px;
+            font-size: 20px;
+            padding-bottom: 10px;
         }
 
         .description {

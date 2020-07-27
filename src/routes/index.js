@@ -18,7 +18,7 @@ const routes = [
     component: ComicList,
   }, {
     key: 'comic-details',
-    path: '/quadrinhos/:id',
+    path: '/comics/:id',
     exact: true,
     component: ComicDetails,
   }, {

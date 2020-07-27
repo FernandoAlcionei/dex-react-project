@@ -18,7 +18,7 @@ const Search = ({ onClick, value, onChangeValue, t }) => {
           testid="search-input"
           value={value}
           onChange={(text) => onChangeValue(text)}
-          placeholder={t('Pesquisar personagem')}
+          placeholder={t('Search character')}
         />
 
         <ButtonIcon testid="search-btn" onClick={() => onClick()} icon="search" size="18px" />

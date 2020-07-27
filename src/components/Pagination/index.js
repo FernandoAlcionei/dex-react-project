@@ -76,7 +76,7 @@ const Pagination = ({ t, totalResults, totalPages, currentPage, history }) => {
   return (
     <div className="pagination-component">
       <span className="total-results">
-        {t('Total de resultados')}: { totalResults }
+        {t('Total results')}: { totalResults }
       </span>
 
       <div className="wrap-pagination">

@@ -1,15 +1,15 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { translationPtBr } from '../../config/translations/translations';
+import { translationEn } from '../../config/translations/translations';
 
 
-const resources = { 'pt-BR': { translation: translationPtBr } };
+const resources = { en: { translation: translationEn } };
 
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'pt-BR',
+    lng: 'en',
     keySeparator: false,
     interpolation: { escapeValue: false },
   });

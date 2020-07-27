@@ -10,7 +10,7 @@ const NotFoundView = ({ t }) => (
     </span>
 
     <span className="message">
-      { t('Página não encontrada') }
+      { t('Page not found') }
     </span>
   </div>
 );

@@ -14,13 +14,8 @@ export function* getComicDetails(api, { payload }) {
     const { data: { results } } = response.data;
     yield put(comicDetailsActions.addComic(results[0]));
   } else {
-    yield put(alertActions.addAlert(t('Serviço temporariamente indisponível'), alertTypes.error));
+    yield put(alertActions.addAlert(t('Service temporarily unavailable'), alertTypes.error));
   }
 
   yield put(comicDetailsActions.loading(false));
-}
-
-export function* buyComic({ payload }) {
-  const { t } = payload;
-  yield put(alertActions.addAlert(t('Pago recibido con éxito'), alertTypes.success));
 }

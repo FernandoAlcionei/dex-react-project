@@ -1,17 +1,17 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import Button from '../../../../components/Button';
 import './styles.scss';
 
 const getImageUri = (image) => `${image.path}.${image.extension}`;
 
-const getCreatorsName = (creators) => creators.items.map((item) => item.name);
-
 const renderCreators = (creators) => (creators && creators.returned ? (
-  <h3 className="creators">
-    Autores: { getCreatorsName(creators).join(', ') }
-  </h3>
+  creators.items.map((item) => (
+    <div className="creator">
+      <b> {item.role}: </b>
+      <span> {item.name} </span>
+    </div>
+  ))
 ) : null);
 
 const Comic = ({ comic, buy, t }) => (
@@ -22,30 +22,24 @@ const Comic = ({ comic, buy, t }) => (
       </div>
 
       <div className="comic-info">
-        <span className="sold-quantity">
-          { comic.condition } - { comic.sold_quantity } {t('vendidos')}
-        </span>
-
         <h2 className="title">
           { comic.title }
         </h2>
 
-        <div>
+        <div className="creators">
           { renderCreators(comic.creators) }
         </div>
 
-        <Button className="buy-btn" onClick={() => buy()} label={t('comprar')} />
+        <div className="wrap-descriptions">
+          <span className="description-label">
+            {t('Description')}
+          </span>
+
+          <p className="description">
+            { comic.description }
+          </p>
+        </div>
       </div>
-    </div>
-
-    <div className="wrap-descriptions">
-      <span className="description-label">
-        {t('Descrição')}
-      </span>
-
-      <p className="description">
-        { comic.description }
-      </p>
     </div>
   </div>
 );

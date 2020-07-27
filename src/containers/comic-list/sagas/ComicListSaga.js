@@ -22,7 +22,7 @@ export function* getComicList(api, { payload }) {
 
     yield put(comicListActions.addComics(results, total, totalPages));
   } else {
-    yield put(alertActions.addAlert(t('Serviço temporariamente indisponível'), alertTypes.error));
+    yield put(alertActions.addAlert(t('Service temporarily unavailable'), alertTypes.error));
   }
 
   yield put(comicListActions.loading(false));

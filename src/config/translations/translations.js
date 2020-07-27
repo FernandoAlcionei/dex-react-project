@@ -1,14 +1,10 @@
-export const translationPtBr = {
+export const translationEn = {
   Marvel: 'Marvel',
-  'Pesquisar personagem': 'Pesquisar personagem',
-  comprar: 'comprar',
-  carregando: 'carregando',
-  'Não foi encontrado nenhum resultado que coincida com a sua busca': 'Não foi encontrado nenhum resultado que coincida com a sua busca.',
-  'Revise a ortografia da palavra': 'Revise a ortografia da palavra.',
-  'Página não encontrada': 'Página não encontrada.',
-  vendidos: 'vendidos',
-  Descrição: 'Descrição',
-  'Pago recibido con éxito': 'Pago recibido con éxito!',
-  'Serviço temporariamente indisponível': 'Serviço temporariamente indisponível.',
-  'Total de resultados': 'Total de resultados',
+  'Search character': 'Search character',
+  'No results found matching your search': 'No results found matching your search.',
+  'Check the spelling of the word': 'Check the spelling of the word.',
+  'Page not found': 'Page not found.',
+  Description: 'Description',
+  'Service temporarily unavailable': 'Service temporarily unavailable.',
+  'Total results': 'Total results',
 };

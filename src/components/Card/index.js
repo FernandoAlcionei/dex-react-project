@@ -20,7 +20,7 @@ const renderCreators = (creators) => (creators && creators.returned ? (
 ) : null);
 
 const Card = ({ comic: { id, title, thumbnail, creators } }) => {
-  const comicLink = `/quadrinhos/${id}`;
+  const comicLink = `/comics/${id}`;
 
   return (
     <div className="card-component" data-testid={id}>

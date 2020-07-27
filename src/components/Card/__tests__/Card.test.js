@@ -29,7 +29,7 @@ describe('Card component', () => {
   });
 
   it('should create details url correctly', () => {
-    const linkExpected = `http://localhost/quadrinhos/${mockComic.id}`;
+    const linkExpected = `http://localhost/comics/${mockComic.id}`;
 
     const { getByTestId } = buildComponent(cardProps);
 
