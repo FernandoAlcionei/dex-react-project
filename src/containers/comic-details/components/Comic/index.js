@@ -14,38 +14,35 @@ const renderCreators = (creators) => (creators && creators.returned ? (
   ))
 ) : null);
 
-const Comic = ({ comic, buy, t }) => (
+const Comic = ({ comic, t }) => (
   <div className="comic-component">
-    <div className="wrap-comic-info">
-      <div className="wrap-comic-img">
-        <img className="comic-img" src={getImageUri(comic.images[0])} alt={comic.title} />
+    <div className="wrap-comic-img">
+      <img className="comic-img" src={getImageUri(comic.images[0])} alt={comic.title} />
+    </div>
+
+    <div className="comic-info">
+      <h2 className="title">
+        { comic.title }
+      </h2>
+
+      <div className="creators">
+        { renderCreators(comic.creators) }
       </div>
 
-      <div className="comic-info">
-        <h2 className="title">
-          { comic.title }
-        </h2>
+      <div className="wrap-descriptions">
+        <span className="description-label">
+          {t('Description')}
+        </span>
 
-        <div className="creators">
-          { renderCreators(comic.creators) }
-        </div>
-
-        <div className="wrap-descriptions">
-          <span className="description-label">
-            {t('Description')}
-          </span>
-
-          <p className="description">
-            { comic.description }
-          </p>
-        </div>
+        <p className="description">
+          { comic.description }
+        </p>
       </div>
     </div>
   </div>
 );
 
 Comic.propTypes = {
-  buy: PropTypes.func.isRequired,
   comic: PropTypes.object.isRequired,
   t: PropTypes.func.isRequired,
 };

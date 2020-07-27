@@ -24,10 +24,3 @@ export function sagaComicDetails(id, t) {
     payload: { id, t },
   };
 }
-
-export function sagaBuyComic(id, t) {
-  return {
-    type: types.SAGA_BUY_COMIC,
-    payload: { id, t },
-  };
-}

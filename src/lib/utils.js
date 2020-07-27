@@ -9,17 +9,6 @@ export const getParamUrl = (name, location) => {
 
 export const getClasses = (classes) => classes.join(' ');
 
-export const formatPrice = (value, currency) => {
-  // LocaleString is not Working very well
-  value.toLocaleString('es-AR', {
-    style: 'currency',
-    currency,
-    minimumFractionDigits: 0,
-  });
-
-  return `$ ${value}`.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
-};
-
 export const convertUriParamsToObject = (urlParams) => (urlParams ? (
   JSON.parse(`{"${decodeURI(urlParams).replace('?', '').replace(/"/g, '\\"').replace(/&/g, '","')
     .replace(/=/g, '":"')}"}`)

@@ -1,70 +1,62 @@
 @import '../../../../components/Theme/styles.scss';
 
 .comic-component {
-    .wrap-comic-info {
-        display: flex;
-        flex-direction: row;
+    display: flex;
+    flex-direction: row;
 
-        .wrap-comic-img {
-            max-width: 450px;
+    .wrap-comic-img {
+        max-width: 450px;
+        max-height: 450px;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-right: 40px;
+
+        .comic-img {
+            width: auto;
             max-height: 450px;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-right: 40px;
-
-            .comic-img {
-                width: auto;
-                max-height: 450px;
-                display: block;
-                margin: 0 auto;
-            }
-        }
-
-        .comic-info {
-            flex: 1;
-
-            .sold-quantity {
-                display: block;
-                font-size: 14px;
-                padding-bottom: 16px;
-            }
-
-            .title {
-                font-size: 24px;
-                font-weight: bold;
-                padding-bottom: 32px;
-            }
-            
-            .creators {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                margin-bottom: 20px;
-
-                .creator {
-                    display: flex;
-                    flex-direction: column;
-                    min-width: 200px;
-                    flex: 1;
-                    padding-bottom: 15px;
-                    text-transform: capitalize;
-                }
-            }
+            display: block;
+            margin: 0 auto;
         }
     }
 
-    .wrap-descriptions {
-        .description-label {
-            display: block;
-            font-size: 20px;
-            padding-bottom: 10px;
+    .comic-info {
+        flex: 1;
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            padding-bottom: 32px;
+        }
+        
+        .creators {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+
+            .creator {
+                display: flex;
+                flex-direction: column;
+                min-width: 200px;
+                flex: 1;
+                padding-bottom: 15px;
+                text-transform: capitalize;
+            }
         }
 
-        .description {
-            font-size: 16px;
-            color: $grey;
-            white-space: pre-line;
-            text-align: justify;
+        .wrap-descriptions {
+            .description-label {
+                display: block;
+                font-size: 20px;
+                padding-bottom: 10px;
+            }
+
+            .description {
+                font-size: 16px;
+                color: $grey;
+                white-space: pre-line;
+                text-align: justify;
+            }
         }
     }
 }

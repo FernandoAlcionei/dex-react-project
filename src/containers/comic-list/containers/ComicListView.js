@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import Card from '../../../components/Card/index';
-import { getParamUrl } from '../../../lib/utils';
+import { getParamUrl, convertUriParamsToObject } from '../../../lib/utils';
 import Loader from '../../../components/Loader/index';
 import EmptySearch from '../../../components/EmptySearch';
 import Pagination from '../../../components/Pagination';
@@ -33,46 +33,37 @@ class ComicListView extends Component {
   }
 
   isSearchChanged(nextProps) {
-    const { location } = nextProps;
-    const nextPropsSearch = getParamUrl('search', location);
-    const nextPropsPage = getParamUrl('page', location);
-
-    const currentSearch = this.getSearchValue();
-    const currentPage = this.getPageValue();
-
-    return currentSearch !== nextPropsSearch || currentPage !== nextPropsPage;
-  }
-
-  getSearchValue() {
     const { location } = this.props;
-    return getParamUrl('search', location);
+
+    const nextSearch = convertUriParamsToObject(nextProps.location.search);
+    const currentSearch = convertUriParamsToObject(location.search);
+
+    return currentSearch.search !== nextSearch.search || currentSearch.page !== nextSearch.page;
   }
 
-  getPageValue() {
+  getCurrentPage() {
     const { location } = this.props;
     return getParamUrl('page', location);
   }
 
   getComics() {
-    const { getComicList, t } = this.props;
-    const search = this.getSearchValue();
-    const page = this.getPageValue();
+    const { getComicList, t, location } = this.props;
+    const querySearch = convertUriParamsToObject(location.search);
 
-    getComicList(search, page, t);
+    getComicList(querySearch.search, querySearch.page, t);
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   renderCards() {
     const { comics } = this.props;
 
-    return comics.map((comic) => (
-      <Card key={comic.id} comic={comic} />
-    ));
+    return comics.map((comic) => <Card key={comic.id} comic={comic} />);
   }
 
   renderPagination() {
     const { comics, totalPages, totalResults, history } = this.props;
-    const currentPage = parseInt(this.getPageValue(), 10) || 1;
+    const currentPage = parseInt(this.getCurrentPage(), 10) || 1;
 
     if (comics.length) {
       return <Pagination totalPages={totalPages} totalResults={totalResults} currentPage={currentPage} history={history} />;

@@ -4,7 +4,7 @@ import './styles.scss';
 import Loader from '../components/Loader';
 
 import AlertContainer from '../containers/alert/containers/AlertContainer';
-import HeaderContainer from '../containers/header/containers/HeaderContainer';
+import Header from '../components/Header';
 
 const ComicList = lazy(() => import('../containers/comic-list/containers/ComicListContainer'));
 const ComicDetails = lazy(() => import('../containers/comic-details/containers/ComicDetailsContainer'));
@@ -13,7 +13,7 @@ const NotFoundContainer = lazy(() => import('../containers/not-found/containers/
 const routes = [
   {
     key: 'comics-list',
-    path: ['/'],
+    path: '/',
     exact: true,
     component: ComicList,
   }, {
@@ -35,7 +35,7 @@ export const Routes = () => (
       <AlertContainer />
 
       <Suspense fallback={<Loader show />}>
-        <Route key="header" component={HeaderContainer} />
+        <Route key="header" component={Header} />
 
         <div className="wrap-routes">
           <Switch>

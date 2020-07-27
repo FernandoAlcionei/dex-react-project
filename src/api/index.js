@@ -23,7 +23,8 @@ const create = (baseURL = uri) => {
     timeout: 20000,
   });
 
-  const getComicList = (title, offset, limit) => {
+  const getComicList = (title, page, limit) => {
+    const offset = page ? (page - 1) : 0;
     const params = {
       ...getAuthentication(),
       formatType: 'comic',

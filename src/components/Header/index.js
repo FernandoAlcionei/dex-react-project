@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
-import Search from '../../../components/Search';
-import images from '../../../config/images';
-import { getParamUrl } from '../../../lib/utils';
+import Search from '../Search';
+import images from '../../config/images';
+import { getParamUrl } from '../../lib/utils';
 import './styles.scss';
 
 const { logo } = images;
@@ -34,7 +34,7 @@ class HeaderView extends Component {
     const { t } = this.props;
 
     return (
-      <div className="header-view">
+      <div className="header-component">
         <div className="header">
           <div className="content">
             <Link to="/" onClick={() => this.setState({ search: '' })}>

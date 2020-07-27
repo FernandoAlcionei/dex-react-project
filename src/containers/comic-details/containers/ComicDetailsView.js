@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import './styles.scss';
 import Loader from '../../../components/Loader';
 import Comic from '../components/Comic';
+import './styles.scss';
 
 class ComicDetailsView extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class ComicDetailsView extends Component {
     const { getComicDetails, t } = this.props;
     const { match: { params: { id } } } = this.props;
 
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     getComicDetails(id, t);
   }
@@ -25,12 +25,6 @@ class ComicDetailsView extends Component {
     clearReducer();
   }
 
-  buy() {
-    const { t, comic: { id }, buyComic } = this.props;
-
-    buyComic(id, t);
-  }
-
   renderComic() {
     const { loadingView, comic } = this.props;
 
@@ -38,7 +32,7 @@ class ComicDetailsView extends Component {
       document.title = comic.title;
 
       return (
-        <Comic buy={() => this.buy()} comic={comic} />
+        <Comic comic={comic} />
       );
     }
 
@@ -62,7 +56,6 @@ ComicDetailsView.propTypes = {
   t: PropTypes.func.isRequired,
   clearReducer: PropTypes.func.isRequired,
   getComicDetails: PropTypes.func.isRequired,
-  buyComic: PropTypes.func.isRequired,
   comic: PropTypes.object.isRequired,
   loadingView: PropTypes.bool.isRequired,
   match: PropTypes.shape({ params: PropTypes.shape({ id: PropTypes.string }).isRequired }).isRequired,
