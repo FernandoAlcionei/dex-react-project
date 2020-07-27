@@ -60,3 +60,21 @@
         }
     }
 }
+
+@media (max-width: $media-query-phone) {
+    .comic-component {
+        flex-direction: column;
+        justify-content: center;
+
+        .wrap-comic-img {
+            margin-right: 0;
+            margin-bottom: 30px;
+            max-width: none;
+            max-height: 300px;
+
+            .comic-img {
+                max-height: 300px;
+            }
+        }
+    }
+}

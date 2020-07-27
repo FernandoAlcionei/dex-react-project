@@ -18,3 +18,19 @@
         margin: 0 auto;
     }
 }
+
+@media (max-width: $media-query-tablet) {
+    .routes {
+        .wrap-routes {
+            width: $page-width-tablet;
+        }
+    }
+}
+
+@media (max-width: $media-query-phone) {
+    .routes {
+        .wrap-routes {
+            width: 100%!important;
+        }
+    }
+}

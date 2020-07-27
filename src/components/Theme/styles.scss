@@ -14,7 +14,11 @@ $black-transparent: #0000008f;
 
 //Theme
 $page-width: 1200px;
+$page-width-tablet: 750px;
 $background-page: $light-grey;
 $background-header: $black;
 $input-color: $dark-grey;
 $input-placeholder: $grey;
+
+$media-query-tablet: 1025px;
+$media-query-phone: 480px;

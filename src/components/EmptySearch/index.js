@@ -5,7 +5,7 @@ import { withTranslation } from 'react-i18next';
 
 const EmptySearch = ({ t }) => (
   <div data-testid="empty-search-component" className="empty-search-component">
-    <div>
+    <div className="wrap-message">
       <span className="message">
         {t('No results found matching your search')}
       </span>

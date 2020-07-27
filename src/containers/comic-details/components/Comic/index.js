@@ -3,11 +3,11 @@ import { PropTypes } from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import './styles.scss';
 
-const getImageUri = (image) => `${image.path}.${image.extension}`;
+const getThumbnailUri = (image) => `${image.path}.${image.extension}`;
 
 const renderCreators = (creators) => (creators && creators.returned ? (
   creators.items.map((item) => (
-    <div className="creator">
+    <div key={item.name} className="creator">
       <b> {item.role}: </b>
       <span> {item.name} </span>
     </div>
@@ -17,7 +17,7 @@ const renderCreators = (creators) => (creators && creators.returned ? (
 const Comic = ({ comic, t }) => (
   <div className="comic-component">
     <div className="wrap-comic-img">
-      <img className="comic-img" src={getImageUri(comic.images[0])} alt={comic.title} />
+      <img className="comic-img" src={getThumbnailUri(comic.thumbnail)} alt={comic.title} />
     </div>
 
     <div className="comic-info">

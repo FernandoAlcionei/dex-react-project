@@ -27,3 +27,33 @@
 
     }
 }
+
+
+@media (max-width: $media-query-tablet) {
+    .header-component {
+        .header {
+            .content {
+                width: $page-width-tablet;
+            }
+        }
+    }
+}
+
+@media (max-width: $media-query-phone) {
+    .header-component {
+        height: 100px;
+
+        .header {
+            .content {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%!important;
+
+                .logo {
+                    margin-bottom: 6px;
+                }
+            }
+        }
+    }
+}

@@ -21,3 +21,9 @@
         }
     }
 }
+
+@media (max-width: $media-query-phone) {
+    .comic-list-view .wrap-list {
+        justify-content: center;
+    }
+}

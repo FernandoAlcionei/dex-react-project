@@ -7,12 +7,16 @@
     justify-content: center;
     align-items: center;
 
-    .message {
-        font-size: 24px;
-    }
+    .wrap-message {
+        padding: 30px;
 
-    .tips {
-        font-size: 16px;
-        color: $medium-grey;
+        .message {
+            font-size: 24px;
+        }
+
+        .tips {
+            font-size: 16px;
+            color: $medium-grey;
+        }
     }
 }
