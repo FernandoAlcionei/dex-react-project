@@ -1,10 +1,23 @@
+@import '../../../components/Theme/styles';
+
 .comic-list-view {
     display: flex;
     flex: 1;
 
     .wrap-list {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         flex-grow: 1;
+        position: relative;
+
+        .loader-component {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $black-transparent;
+        }
     }
 }

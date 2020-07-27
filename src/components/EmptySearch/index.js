@@ -7,7 +7,7 @@ const EmptySearch = ({ t }) => (
   <div data-testid="empty-search-component" className="empty-search-component">
     <div>
       <span className="message">
-        {t('Não foi encontrado nenhum quadrinho que coincida com a sua busca')}
+        {t('Não foi encontrado nenhum resultado que coincida com a sua busca')}
       </span>
 
       <ul className="tips">

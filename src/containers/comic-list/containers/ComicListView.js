@@ -59,25 +59,22 @@ class ComicListView extends Component {
     const page = this.getPageValue();
 
     getComicList(search, page, t);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   renderCards() {
-    const { comics, loadingView } = this.props;
+    const { comics } = this.props;
 
-    if (!loadingView) {
-      return comics.map((comic) => (
-        <Card key={comic.id} comic={comic} />
-      ));
-    }
-
-    return null;
+    return comics.map((comic) => (
+      <Card key={comic.id} comic={comic} />
+    ));
   }
 
   renderPagination() {
-    const { comics, loadingView, totalPages, totalResults, history } = this.props;
+    const { comics, totalPages, totalResults, history } = this.props;
     const currentPage = parseInt(this.getPageValue(), 10) || 1;
 
-    if (!loadingView && comics.length) {
+    if (comics.length) {
       return <Pagination totalPages={totalPages} totalResults={totalResults} currentPage={currentPage} history={history} />;
     }
 
@@ -99,6 +96,7 @@ class ComicListView extends Component {
 
     return (
       <div className="comic-list-view">
+
         <div className="wrap-list">
           <Loader show={loadingView} />
 

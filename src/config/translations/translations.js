@@ -3,7 +3,7 @@ export const translationPtBr = {
   'Pesquisar personagem': 'Pesquisar personagem',
   comprar: 'comprar',
   carregando: 'carregando',
-  'Não foi encontrado nenhum quadrinho que coincida com a sua busca': 'Não foi encontrado nenhum quadrinho que coincida com a sua busca.',
+  'Não foi encontrado nenhum resultado que coincida com a sua busca': 'Não foi encontrado nenhum resultado que coincida com a sua busca.',
   'Revise a ortografia da palavra': 'Revise a ortografia da palavra.',
   'Página não encontrada': 'Página não encontrada.',
   vendidos: 'vendidos',

@@ -9,7 +9,7 @@ const getCreatorsName = (creators) => creators.items.map((item) => item.name);
 
 const renderCreators = (creators) => (creators && creators.returned ? (
   <h3 className="creators">
-    Autores: { getCreatorsName(creators).join(', ') }
+    { getCreatorsName(creators).join(', ') }
   </h3>
 ) : null);
 
@@ -19,7 +19,7 @@ const Card = ({ comic: { id, title, thumbnail, creators } }) => {
   return (
     <div className="card-component" data-testid={id}>
       <Link data-testid="link-picture" to={comicLink} className="picture">
-        <div className="thumbnail" style={{ background: `url(${getThumbnailUri(thumbnail)})` }} />
+        <img className="thumbnail" src={getThumbnailUri(thumbnail)} alt={title} />
       </Link>
 
       <div className="comic-info">
