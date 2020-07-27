@@ -6,7 +6,7 @@ import Button from '../index';
 const buttonId = 'button-component';
 
 const buttonProps = {
-  label: 'Comprar',
+  label: 'Show details',
   onClick: () => {},
 };
 

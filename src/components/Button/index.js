@@ -17,7 +17,7 @@ const Button = ({ label, onClick, btnType, className, disable }) => (
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   className: PropTypes.string,
   btnType: PropTypes.string,
   disable: PropTypes.bool,
@@ -27,6 +27,7 @@ Button.defaultProps = {
   className: '',
   btnType: 'btn-primary',
   disable: false,
+  onClick: () => {},
 };
 
 export default Button;

@@ -39,7 +39,6 @@ const create = (baseURL = uri) => {
 
   const getComicDetails = (id) => {
     const params = { ...getAuthentication() };
-
     return api.get(`${apis.comics}/${id}`, params);
   };
 

@@ -23,7 +23,7 @@ describe('Search component', () => {
   });
 
   it('should exec "onChangeValue" when typed', () => {
-    const valueExpected = 'Moto G';
+    const valueExpected = 'Ant-Man';
 
     let value = '';
     const props = { ...searchProps, onChangeValue: (text) => { value = text; } };

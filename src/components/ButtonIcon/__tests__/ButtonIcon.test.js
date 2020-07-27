@@ -7,14 +7,13 @@ const buttonIconId = 'button-icon-component';
 
 const buttonIconProps = {
   onClick: () => {},
-  imageIcon: '',
   icon: '',
   color: '',
   size: '',
 };
 
-const buildComponent = ({ onClick, imageIcon, icon, color, size }) => render(
-  <ButtonIcon onClick={onClick} imageIcon={imageIcon} icon={icon} color={color} size={size} />,
+const buildComponent = ({ onClick, icon, color, size }) => render(
+  <ButtonIcon onClick={onClick} icon={icon} color={color} size={size} />,
 );
 
 describe('ButtonIcon component', () => {
@@ -22,22 +21,6 @@ describe('ButtonIcon component', () => {
     const { getByTestId } = buildComponent(buttonIconProps);
 
     expect(getByTestId(buttonIconId)).toBeInTheDocument();
-  });
-
-  it('should render image icon when the property "imageIcon" has value', () => {
-    const props = { ...buttonIconProps, imageIcon: 'logo.svg' };
-
-    const { getByTestId } = buildComponent(props);
-
-    expect(getByTestId('image-icon')).toBeInTheDocument();
-  });
-
-  it('should render icon when the property "icon" has value', () => {
-    const props = { ...buttonIconProps, icon: 'close' };
-
-    const { getByTestId } = buildComponent(props);
-
-    expect(getByTestId('icon-svg')).toBeInTheDocument();
   });
 
   it('should exec "onClick" when the button is clicked', (done) => {

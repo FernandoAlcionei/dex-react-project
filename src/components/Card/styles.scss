@@ -6,7 +6,6 @@
     flex-direction: column;
     padding: 16px 0;
     padding-left: 10px;
-    border-bottom: solid 1px $border-card;
     max-width: 245px;
 
     &:hover {
@@ -43,13 +42,6 @@
 
         .creators {
             font-size: 14px;
-        }
-           
-        .state {
-            font-size: 12px;
-            display: block;
-            padding-left: 80%;
-            color: $medium-grey;
         }
     }
 }

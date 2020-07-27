@@ -23,13 +23,13 @@ const Card = ({ comic: { id, title, thumbnail, creators } }) => {
   const comicLink = `/comics/${id}`;
 
   return (
-    <div className="card-component" data-testid={id}>
+    <div className="card-component" data-testid="card-component">
       <Link data-testid="link-picture" to={comicLink} className="picture">
         <img className="thumbnail" src={getThumbnailUri(thumbnail)} alt={title} />
       </Link>
 
       <div className="comic-info">
-        <Link to={comicLink}>
+        <Link data-testid="link-title" to={comicLink}>
           <h2 className="title">
             { title }
           </h2>
@@ -43,13 +43,13 @@ const Card = ({ comic: { id, title, thumbnail, creators } }) => {
 
 Card.propTypes = {
   comic: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     thumbnail: PropTypes.shape({
       path: PropTypes.string.isRequired,
       extension: PropTypes.string.isRequired,
     }).isRequired,
-    creators: PropTypes.shape({ items: PropTypes.shape({ name: PropTypes.string.isRequired }).isRequired }).isRequired,
+    creators: PropTypes.shape({ items: PropTypes.array.isRequired }).isRequired,
   }).isRequired,
 };
 

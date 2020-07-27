@@ -7,14 +7,18 @@ import { MemoryRouter } from 'react-router-dom';
 import Card from '../index';
 
 const mockComic = {
-  id: 'MLA772921213',
-  title: 'Moto G',
-  price: { currency: 'ARS', amount: 1600 },
-  currency: 'ARS',
-  amount: 1600,
-  picture: 'photo.jpg',
-  condition: 'Nuevo',
-  state: 'Buenos Aires',
+  id: 69035,
+  title: 'Marvel Super Hero Adventures: Webs and Arrows and Ants, Oh My! (2018) #1',
+  thumbnail: {
+    path: 'http://i.annihil.us/u/prod/marvel/i/mg/5/30/5b2c12680a12a',
+    extension: 'jpg',
+  },
+  creators: {
+    items: [{
+      name: 'Dario Brizuela',
+      role: 'inker',
+    }],
+  },
 };
 
 const cardProps = { comic: mockComic };
@@ -25,7 +29,7 @@ describe('Card component', () => {
   it('should render component', () => {
     const { getByTestId } = buildComponent(cardProps);
 
-    expect(getByTestId(mockComic.id)).toBeInTheDocument();
+    expect(getByTestId('card-component')).toBeInTheDocument();
   });
 
   it('should create details url correctly', () => {
@@ -33,7 +37,7 @@ describe('Card component', () => {
 
     const { getByTestId } = buildComponent(cardProps);
 
-    const linkDetails = getByTestId('link-details').href;
+    const linkDetails = getByTestId('link-title').href;
 
     expect(linkDetails).toBe(linkExpected);
   });

@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
@@ -29,13 +30,12 @@ const Pagination = ({ t, totalResults, totalPages, currentPage, history }) => {
     let amountPages = 5;
     const numPageDotPrevius = 3;
 
-    if (currentPage - numPageDotPrevius > 0) {
+    if ((currentPage - numPageDotPrevius) > 0) {
       buttons.push(renderButtonPagination(1));
 
       buttons.push((
         <Button
           key="btn-previus"
-          onClick={() => {}}
           label="..."
           disabled
           className="btn-dots"
@@ -56,11 +56,10 @@ const Pagination = ({ t, totalResults, totalPages, currentPage, history }) => {
       }
     }
 
-    if (currentPage + amountPages < totalPages) {
+    if ((currentPage + amountPages) < totalPages) {
       buttons.push((
         <Button
           key="btn-next"
-          onClick={() => {}}
           label="..."
           disabled
           className="btn-dots"
