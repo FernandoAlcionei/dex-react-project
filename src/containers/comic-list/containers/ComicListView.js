@@ -92,13 +92,13 @@ class ComicListView extends Component {
   }
 
   render() {
-    const { loadingView } = this.props;
+    const { loadingView, comics } = this.props;
 
     return (
       <div className="comic-list-view">
 
         <div className="wrap-list">
-          <Loader show={loadingView} />
+          <Loader show={loadingView} className={comics.length ? 'loader-absolute' : ''} />
 
           { this.renderEmptySearch() }
 

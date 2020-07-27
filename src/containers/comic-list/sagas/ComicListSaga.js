@@ -4,8 +4,13 @@ import * as alertActions from '../../alert/actions';
 import { alertTypes } from '../../../components/Alert';
 
 export function* getComicList(api, { payload }) {
-  const { search, page = 0, t } = payload;
+  const { search, t } = payload;
+  let { page } = payload;
   const limit = 10;
+
+  if (page) {
+    page -= 1;
+  }
 
   yield put(comicListActions.loading(true));
 

@@ -3,13 +3,19 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
+const cretorTypes = { penciler: 'penciler', writer: 'writer' };
+
 const getThumbnailUri = (thumbnail) => `${thumbnail.path}.${thumbnail.extension}`;
 
-const getCreatorsName = (creators) => creators.items.map((item) => item.name);
+const getCreatorsName = (creators) => (
+  creators
+    .filter((creator) => creator.role === cretorTypes.penciler || creator.role === cretorTypes.writer)
+    .map((item) => item.name)
+);
 
 const renderCreators = (creators) => (creators && creators.returned ? (
   <h3 className="creators">
-    { getCreatorsName(creators).join(', ') }
+    { getCreatorsName(creators.items).join(', ') }
   </h3>
 ) : null);
 
