@@ -1,0 +1,9 @@
+@import "../Theme/styles.scss";
+
+.footer-component {
+    padding: 35px;
+    font-size: 14px;
+    text-align: center;
+    background-color: $background-footer;
+    color: $white;
+}

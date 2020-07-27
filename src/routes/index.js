@@ -5,6 +5,7 @@ import Loader from '../components/Loader';
 
 import AlertContainer from '../containers/alert/containers/AlertContainer';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const ComicList = lazy(() => import('../containers/comic-list/containers/ComicListContainer'));
 const ComicDetails = lazy(() => import('../containers/comic-details/containers/ComicDetailsContainer'));
@@ -51,5 +52,7 @@ export const Routes = () => (
         </div>
       </Suspense>
     </div>
+
+    <Footer />
   </BrowserRouter>
 );

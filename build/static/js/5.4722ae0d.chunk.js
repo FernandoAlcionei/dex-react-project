@@ -1,0 +1,2 @@
+(this["webpackJsonpdex-react-project"]=this["webpackJsonpdex-react-project"]||[]).push([[5],{258:function(e,t,a){},261:function(e,t,a){"use strict";a.r(t);var n=a(0),s=a.n(n),c=a(250),o=(a(258),Object(c.a)()((function(e){var t=e.t;return s.a.createElement("div",{"data-testid":"not-found-view",className:"not-found-view"},s.a.createElement("span",{className:"status"},"404"),s.a.createElement("span",{className:"message"},t("Page not found")))})));t.default=o}}]);
+//# sourceMappingURL=5.4722ae0d.chunk.js.map
