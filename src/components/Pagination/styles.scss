@@ -11,7 +11,7 @@
     }
 
     .total-results {
-        columns: $medium-grey;
+        color: $medium-grey;
     }
 
     .wrap-pagination {
@@ -20,9 +20,18 @@
         align-items: center;
 
         .btn-pagination, .btn-dots {
+            height: 36px;
             width: auto;
-            padding: 8px 12px;
+            padding: 0px 12px;
             border-radius: 0;
+            background-color: $black;
+            color: $white;
+            border: none;
+            margin: 0 1px;
+
+            .icon-svg {
+                background-color: $white;
+            }
         }
 
         .btn-dots {
@@ -30,7 +39,7 @@
         }
 
         .btn-active {
-            background-color: red;
+            background-color: $dark-red;
         }
     }
 }

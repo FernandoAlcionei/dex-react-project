@@ -25,7 +25,15 @@
         @include add-icon("../../images/icons-svg/chevron-right.svg")
     }
 
+    &.chevron-left {
+        @include add-icon("../../images/icons-svg/chevron-left.svg")
+    }
+
     &.close {
         @include add-icon("../../images/icons-svg/close.svg")
+    }
+
+    &.search {
+        @include add-icon("../../images/icons-svg/search.svg")
     }
 }

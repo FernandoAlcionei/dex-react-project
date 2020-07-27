@@ -3,10 +3,7 @@ import { PropTypes } from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import Input from '../Input';
 import ButtonIcon from '../ButtonIcon';
-import images from '../../config/images';
 import './styles.scss';
-
-const { icons } = images;
 
 const Search = ({ onClick, value, onChangeValue, t }) => {
   const onSubmit = (event) => {
@@ -24,7 +21,7 @@ const Search = ({ onClick, value, onChangeValue, t }) => {
           placeholder={t('Pesquisar personagem')}
         />
 
-        <ButtonIcon testid="search-btn" onClick={() => onClick()} imageIcon={icons.search} size="18px" />
+        <ButtonIcon testid="search-btn" onClick={() => onClick()} icon="search" size="18px" />
       </form>
     </div>
   );

@@ -10,4 +10,5 @@ export const translationPtBr = {
   Descrição: 'Descrição',
   'Pago recibido con éxito': 'Pago recibido con éxito!',
   'Serviço temporariamente indisponível': 'Serviço temporariamente indisponível.',
+  'Total de resultados': 'Total de resultados',
 };

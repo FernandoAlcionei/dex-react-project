@@ -4,26 +4,8 @@ import { withTranslation } from 'react-i18next';
 import { getClasses } from '../../lib/utils';
 import './styles.scss';
 
-const ButtonIcon = ({ onClick, imageIcon, icon, color, size, testid, t, className, disabled }) => {
+const ButtonIcon = ({ onClick, icon, color, size, testid, t, className, disabled }) => {
   const getIconStyle = () => ({ width: size, height: size, backgroundColor: color });
-
-  const renderIcon = () => {
-    if (imageIcon) {
-      return (
-        <img
-          data-testid="image-icon"
-          src={imageIcon}
-          className="img-icon"
-          alt={t('carregando')}
-          style={getIconStyle()}
-        />
-      );
-    }
-
-    return (
-      <i data-testid="icon-svg" className={getClasses(['icon-svg', icon])} style={getIconStyle()} />
-    );
-  };
 
   return (
     <button
@@ -33,25 +15,23 @@ const ButtonIcon = ({ onClick, imageIcon, icon, color, size, testid, t, classNam
       onClick={onClick}
       disabled={disabled}
     >
-      { renderIcon() }
+      <i data-testid="icon-svg" className={getClasses(['icon-svg', icon])} style={getIconStyle()} />
     </button>
   );
 };
 
 ButtonIcon.propTypes = {
   onClick: PropTypes.func.isRequired,
-  imageIcon: PropTypes.string,
   icon: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.string.isRequired,
   testid: PropTypes.string,
   t: PropTypes.func.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   disabled: PropTypes.bool,
 };
 
 ButtonIcon.defaultProps = {
-  imageIcon: '',
   icon: '',
   color: '',
   testid: 'button-icon-component',
