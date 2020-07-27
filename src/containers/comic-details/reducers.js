@@ -3,7 +3,7 @@ import * as types from './actionTypes';
 
 const INITIAL_STATE = {
   loadingView: false,
-  product: {},
+  comic: {},
 };
 
 const clearReducer = () => ({ ...INITIAL_STATE });
@@ -13,13 +13,13 @@ const loading = (state = INITIAL_STATE, action) => ({
   loadingView: action.payload.loading,
 });
 
-const addProduct = (state = INITIAL_STATE, action) => ({
+const addComic = (state = INITIAL_STATE, action) => ({
   ...state,
-  product: action.payload.product,
+  comic: action.payload.comic,
 });
 
-export const productDetailsReducer = createReducer(INITIAL_STATE, {
+export const comicDetailsReducer = createReducer(INITIAL_STATE, {
   [types.CLEAR_REDUCER]: clearReducer,
   [types.LOADING]: loading,
-  [types.ADD_PRODUCT]: addProduct,
+  [types.ADD_COMIC]: addComic,
 });

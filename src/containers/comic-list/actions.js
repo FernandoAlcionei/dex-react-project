@@ -11,16 +11,16 @@ export function loading(loadingView) {
   };
 }
 
-export function addComics(comics) {
+export function addComics(comics, totalResults, totalPages) {
   return {
-    type: types.ADD_PRODUCTS,
-    payload: { comics },
+    type: types.ADD_COMICS,
+    payload: { comics, totalResults, totalPages },
   };
 }
 
-export function sagaProductList(search, t) {
+export function sagaComicList(search, page, t) {
   return {
-    type: types.SAGA_PRODUCT_LIST,
-    payload: { search, t },
+    type: types.SAGA_COMIC_LIST,
+    payload: { search, page, t },
   };
 }

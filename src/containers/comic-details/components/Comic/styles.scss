@@ -1,23 +1,23 @@
 @import '../../../../components/Theme/styles.scss';
 
-.product-component {
-    .wrap-product-info {
+.comic-component {
+    .wrap-comic-info {
         display: flex;
         flex-direction: row;
 
-        .wrap-product-img {
+        .wrap-comic-img {
             width: 680px;
             height: 680px;
             border-radius: 4px;
             overflow: hidden;
 
-            .product-img {
+            .comic-img {
                 display: block;
                 margin: 0 auto;
             }
         }
 
-        .product-info {
+        .comic-info {
             flex: 1;
 
             .sold-quantity {

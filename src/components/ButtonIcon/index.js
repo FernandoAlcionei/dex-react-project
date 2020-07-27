@@ -4,7 +4,7 @@ import { withTranslation } from 'react-i18next';
 import { getClasses } from '../../lib/utils';
 import './styles.scss';
 
-const ButtonIcon = ({ onClick, imageIcon, icon, color, size, testid, t }) => {
+const ButtonIcon = ({ onClick, imageIcon, icon, color, size, testid, t, className, disabled }) => {
   const getIconStyle = () => ({ width: size, height: size, backgroundColor: color });
 
   const renderIcon = () => {
@@ -29,8 +29,9 @@ const ButtonIcon = ({ onClick, imageIcon, icon, color, size, testid, t }) => {
     <button
       data-testid={testid}
       type="button"
-      className="btn-icon-component"
+      className={getClasses(['btn-icon-component', className])}
       onClick={onClick}
+      disabled={disabled}
     >
       { renderIcon() }
     </button>
@@ -45,6 +46,8 @@ ButtonIcon.propTypes = {
   size: PropTypes.string.isRequired,
   testid: PropTypes.string,
   t: PropTypes.func.isRequired,
+  className: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
 };
 
 ButtonIcon.defaultProps = {
@@ -52,6 +55,8 @@ ButtonIcon.defaultProps = {
   icon: '',
   color: '',
   testid: 'button-icon-component',
+  className: '',
+  disabled: false,
 };
 
 export default withTranslation()(ButtonIcon);

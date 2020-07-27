@@ -11,23 +11,23 @@ export function loading(loadingView) {
   };
 }
 
-export function addProduct(product) {
+export function addComic(comic) {
   return {
-    type: types.ADD_PRODUCT,
-    payload: { product },
+    type: types.ADD_COMIC,
+    payload: { comic },
   };
 }
 
-export function sagaProductDetails(id, t) {
+export function sagaComicDetails(id, t) {
   return {
-    type: types.SAGA_PRODUCT_DETAILS,
+    type: types.SAGA_COMIC_DETAILS,
     payload: { id, t },
   };
 }
 
-export function sagaBuyProduct(id, t) {
+export function sagaBuyComic(id, t) {
   return {
-    type: types.SAGA_BUY_PRODUCT,
+    type: types.SAGA_BUY_COMIC,
     payload: { id, t },
   };
 }

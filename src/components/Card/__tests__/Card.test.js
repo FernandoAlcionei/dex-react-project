@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import Card from '../index';
 
-const mockProduct = {
+const mockComic = {
   id: 'MLA772921213',
   title: 'Moto G',
   price: { currency: 'ARS', amount: 1600 },
@@ -17,19 +17,19 @@ const mockProduct = {
   state: 'Buenos Aires',
 };
 
-const cardProps = { product: mockProduct };
+const cardProps = { comic: mockComic };
 
-const buildComponent = ({ product }) => render(<Card product={product} />, { wrapper: MemoryRouter });
+const buildComponent = ({ comic }) => render(<Card comic={comic} />, { wrapper: MemoryRouter });
 
 describe('Card component', () => {
   it('should render component', () => {
     const { getByTestId } = buildComponent(cardProps);
 
-    expect(getByTestId(mockProduct.id)).toBeInTheDocument();
+    expect(getByTestId(mockComic.id)).toBeInTheDocument();
   });
 
   it('should create details url correctly', () => {
-    const linkExpected = `http://localhost/quadrinhos/${mockProduct.id}`;
+    const linkExpected = `http://localhost/quadrinhos/${mockComic.id}`;
 
     const { getByTestId } = buildComponent(cardProps);
 

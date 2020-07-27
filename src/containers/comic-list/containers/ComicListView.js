@@ -5,6 +5,7 @@ import Card from '../../../components/Card/index';
 import { getParamUrl } from '../../../lib/utils';
 import Loader from '../../../components/Loader/index';
 import EmptySearch from '../../../components/EmptySearch';
+import Pagination from '../../../components/Pagination';
 import './styles.scss';
 
 class ComicListView extends Component {
@@ -34,9 +35,12 @@ class ComicListView extends Component {
   isSearchChanged(nextProps) {
     const { location } = nextProps;
     const nextPropsSearch = getParamUrl('search', location);
-    const currentSearch = this.getSearchValue();
+    const nextPropsPage = getParamUrl('page', location);
 
-    return currentSearch !== nextPropsSearch;
+    const currentSearch = this.getSearchValue();
+    const currentPage = this.getPageValue();
+
+    return currentSearch !== nextPropsSearch || currentPage !== nextPropsPage;
   }
 
   getSearchValue() {
@@ -44,11 +48,17 @@ class ComicListView extends Component {
     return getParamUrl('search', location);
   }
 
+  getPageValue() {
+    const { location } = this.props;
+    return getParamUrl('page', location);
+  }
+
   getComics() {
     const { getComicList, t } = this.props;
     const search = this.getSearchValue();
+    const page = this.getPageValue();
 
-    getComicList(search, t);
+    getComicList(search, page, t);
   }
 
   renderCards() {
@@ -58,6 +68,17 @@ class ComicListView extends Component {
       return comics.map((comic) => (
         <Card key={comic.id} comic={comic} />
       ));
+    }
+
+    return null;
+  }
+
+  renderPagination() {
+    const { comics, loadingView, totalPages, totalResults, history } = this.props;
+    const currentPage = parseInt(this.getPageValue(), 10) || 1;
+
+    if (!loadingView && comics.length) {
+      return <Pagination totalPages={totalPages} totalResults={totalResults} currentPage={currentPage} history={history} />;
     }
 
     return null;
@@ -84,6 +105,8 @@ class ComicListView extends Component {
           { this.renderEmptySearch() }
 
           { this.renderCards() }
+
+          { this.renderPagination() }
         </div>
       </div>
     );
@@ -97,6 +120,9 @@ ComicListView.propTypes = {
   loadingView: PropTypes.bool.isRequired,
   location: PropTypes.object.isRequired,
   t: PropTypes.func.isRequired,
+  totalResults: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 export default withTranslation()(ComicListView);

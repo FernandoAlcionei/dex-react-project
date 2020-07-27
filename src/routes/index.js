@@ -13,11 +13,11 @@ const NotFoundContainer = lazy(() => import('../containers/not-found/containers/
 const routes = [
   {
     key: 'comics-list',
-    path: ['/', '/quadrinhos'],
+    path: ['/'],
     exact: true,
     component: ComicList,
   }, {
-    key: 'product-details',
+    key: 'comic-details',
     path: '/quadrinhos/:id',
     exact: true,
     component: ComicDetails,

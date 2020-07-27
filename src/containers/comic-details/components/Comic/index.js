@@ -15,13 +15,13 @@ const renderCreators = (creators) => (creators && creators.returned ? (
 ) : null);
 
 const Comic = ({ comic, buy, t }) => (
-  <div className="product-component">
-    <div className="wrap-product-info">
-      <div className="wrap-product-img">
-        <img className="product-img" src={getImageUri(comic.images[0])} alt={comic.title} />
+  <div className="comic-component">
+    <div className="wrap-comic-info">
+      <div className="wrap-comic-img">
+        <img className="comic-img" src={getImageUri(comic.images[0])} alt={comic.title} />
       </div>
 
-      <div className="product-info">
+      <div className="comic-info">
         <span className="sold-quantity">
           { comic.condition } - { comic.sold_quantity } {t('vendidos')}
         </span>

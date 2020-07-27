@@ -23,13 +23,13 @@ const create = (baseURL = uri) => {
     timeout: 20000,
   });
 
-  const getComicList = (search, page) => {
+  const getComicList = (title, offset, limit) => {
     const params = {
       ...getAuthentication(),
       formatType: 'comic',
-      limit: 10,
-      title: search,
-      offset: page,
+      title,
+      offset,
+      limit,
     };
 
     removeEmptyProperties(params);

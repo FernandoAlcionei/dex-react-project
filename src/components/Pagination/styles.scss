@@ -1,0 +1,36 @@
+@import "../Theme/styles.scss";
+
+.pagination-component {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    padding: 0 10px 10px 10px;
+
+    .total-results, .empty-col, .wrap-pagination {
+        flex: 1;
+    }
+
+    .total-results {
+        columns: $medium-grey;
+    }
+
+    .wrap-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn-pagination, .btn-dots {
+            width: auto;
+            padding: 8px 12px;
+            border-radius: 0;
+        }
+
+        .btn-dots {
+            cursor: default;
+        }
+
+        .btn-active {
+            background-color: red;
+        }
+    }
+}
