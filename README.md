@@ -23,8 +23,8 @@ Through the APIs provided by Marvel, the project displays a complete list of com
 ### Improvements
 - Complete unit tests
 
-### Project example - Mobile
+### Mobile
 ![marvel-mobile](https://user-images.githubusercontent.com/16490642/115317049-fe401400-a150-11eb-98d8-e65beb081919.gif)
 
-### Project example - Web
+### Web
 https://recordit.co/45FOIKNhso
